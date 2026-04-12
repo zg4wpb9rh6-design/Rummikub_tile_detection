@@ -434,8 +434,8 @@
 
 <!-- Header -->
 <header>
-  <div class="logo">🎲 Rummikub Tile Detection</div>
-  <div class="subtitle">זיהוי אבני רמיקוב וסטים חוקיים</div>
+  <div class="logo">Rummikub Tile Detection 🎲</div>
+  <div class="subtitle">זיהוי אריחי רמיקוב וסטים חוקיים</div>
   <div class="color-bar">
     <div class="color-dot"></div>
     <div class="color-dot"></div>
@@ -457,7 +457,7 @@
   <!-- Upload area -->
   <div class="upload-card" id="uploadArea">
     <div class="upload-icon">📸</div>
-    <div class="upload-text">העלה תמונה של אבני רמיקוב 🎲</div>
+    <div class="upload-text">העלה תמונה של אריחי רמיקוב 🎲</div>
     <div class="upload-sub">לחץ או גרור תמונה לכאן</div>
     <input type="file" id="fileInput" accept="image/*">
   </div>
@@ -468,7 +468,7 @@
       זהה 🔍
     </button>
     <button class="btn btn-secondary" id="resetBtn" style="display:none">
-      🔄 תמונה חדשה
+      תמונה חדשה 🔄
     </button>
   </div>
 
@@ -493,7 +493,7 @@
     </div>
 
     <div class="tiles-section" id="tilesSection" style="display:none">
-      <div class="tiles-title">🎯 אבנות שזוהו</div>
+      <div class="tiles-title">אריחים שזוהו 🎯</div>
       <div class="tiles-grid" id="tilesGrid"></div>
     </div>
   </div>
@@ -579,7 +579,7 @@
   function findValidSet(tiles) {
     for (const size of [3, 4]) {
       for (const combo of combinations(tiles, size)) {
-        if (isRun(combo)) return { valid: true, type: 'סדרה', tiles: combo };
+        if (isRun(combo)) return { valid: true, type: 'רצף', tiles: combo };
         if (isGroup(combo)) return { valid: true, type: 'קבוצה', tiles: combo };
       }
     }
@@ -676,7 +676,7 @@
   async function runDetection() {
     if (!model || !currentImage) return;
 
-    showStatus('loading', '🔍 מזהה אבנות... <span class="spinner"></span>');
+    showStatus('loading', 'מזהה אריחים... <span class="spinner"></span> 🔍');
     detectBtn.disabled = true;
 
     await new Promise(r => setTimeout(r, 50));
@@ -721,7 +721,7 @@
       const result = findValidSet(tiles);
       showResults(result, tiles);
 
-      showStatus('success', `✅ זוהו ${tiles.length} אבנות`);
+      showStatus('success', `✅ זוהו ${tiles.length} אריחים`);
 
     } catch (e) {
       console.error(e);
@@ -857,7 +857,7 @@
       banner.className = 'result-banner result-invalid';
       emoji.textContent = '😕';
       title.textContent = 'לא נמצא סט חוקי';
-      desc.textContent = `זוהו ${tiles.length} אבנות - אין סדרה או קבוצה חוקית`;
+      desc.textContent = `זוהו ${tiles.length} אריחים - אין רצף או קבוצה חוקית`;
     }
 
     // Show tile chips
@@ -868,7 +868,7 @@
         const chip = document.createElement('div');
         chip.className = `tile-chip tile-${tile.color}`;
         chip.style.animationDelay = `${i * 0.05}s`;
-        chip.textContent = `${tile.color === 'red' ? '🔴' : tile.color === 'blue' ? '🔵' : tile.color === 'yellow' ? '🟡' : '⚫'} ${tile.number}`;
+        chip.textContent = `${tile.number} ${tile.color === 'red' ? '🔴' : tile.color === 'blue' ? '🔵' : tile.color === 'yellow' ? '🟡' : '⚫'}`;
         tilesGrid.appendChild(chip);
       });
     }
