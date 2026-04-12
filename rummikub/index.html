@@ -850,9 +850,9 @@
     if (result.valid) {
       banner.className = 'result-banner result-valid';
       emoji.textContent = '🎉';
-      title.textContent = `נמצא סט חוקי! סוג: ${result.type}`;
+      title.textContent = `נמצא סט חוקי!`;
       const setStr = result.tiles.map(t => `${t.color}_${t.number}`).join(', ');
-      desc.textContent = setStr;
+      desc.innerHTML = `סוג: ${result.type}<br>${setStr}`;
     } else {
       banner.className = 'result-banner result-invalid';
       emoji.textContent = '😕';
