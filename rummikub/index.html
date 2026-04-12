@@ -326,9 +326,9 @@
     .result-invalid .result-text h2 { color: #B71C1C; }
 
     .result-text p {
-      font-size: 0.95rem;
-      opacity: 0.8;
-      font-weight: 600;
+      font-size: 1.1rem;
+      opacity: 0.85;
+      font-weight: 700;
     }
 
     /* Tiles grid */
@@ -851,8 +851,7 @@
       banner.className = 'result-banner result-valid';
       emoji.textContent = '🎉';
       title.textContent = `נמצא סט חוקי!`;
-      const setStr = result.tiles.map(t => `${t.color}_${t.number}`).join(', ');
-      desc.innerHTML = `סוג: ${result.type}<br>${setStr}`;
+      desc.innerHTML = `סוג: ${result.type}`;
     } else {
       banner.className = 'result-banner result-invalid';
       emoji.textContent = '😕';
