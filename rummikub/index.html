@@ -494,7 +494,7 @@
   async function loadModel() {
     try {
       setModelStatus('loading', 'טוען מודל...');
-      model = await tf.loadGraphModel('best_web_model/model.json');
+      model = await tf.loadGraphModel('model.json');
       setModelStatus('ready', 'המודל מוכן ✓');
       document.getElementById('detectBtn').disabled = false;
     } catch (e) {
