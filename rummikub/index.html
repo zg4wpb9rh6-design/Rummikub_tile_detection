@@ -572,7 +572,7 @@
     await new Promise(r => setTimeout(r, 50));
 
     try {
-      const INPUT_SIZE = 640;
+      const INPUT_SIZE = 512;
       const canvas = document.createElement('canvas');
       canvas.width = INPUT_SIZE;
       canvas.height = INPUT_SIZE;
@@ -612,7 +612,7 @@
   }
 
   function parseDetections(data, inputSize, confThresh) {
-    const numPredictions = 8400;
+    const numPredictions = 5376;
     const detections = [];
 
     for (let i = 0; i < numPredictions; i++) {
