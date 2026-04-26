@@ -28,6 +28,7 @@
       overflow-x: hidden;
     }
 
+    /* Animated background tiles */
     .bg-tiles {
       position: fixed;
       inset: 0;
@@ -50,6 +51,7 @@
       100% { transform: translateY(-20vh) rotate(360deg); }
     }
 
+    /* Header */
     header {
       position: relative;
       z-index: 10;
@@ -75,6 +77,7 @@
       letter-spacing: 1px;
     }
 
+    /* Color bar */
     .color-bar {
       display: flex;
       justify-content: center;
@@ -99,6 +102,7 @@
       50% { transform: scale(1.4); }
     }
 
+    /* Main container */
     main {
       position: relative;
       z-index: 10;
@@ -107,6 +111,7 @@
       padding: 0 1.2rem 3rem;
     }
 
+    /* Upload card */
     .upload-card {
       background: var(--card);
       border-radius: 24px;
@@ -150,6 +155,7 @@
 
     #fileInput { display: none; }
 
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -199,6 +205,7 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Preview */
     #preview-section {
       display: none;
       margin-bottom: 1.5rem;
@@ -219,6 +226,7 @@
       background: #f8f8f8;
     }
 
+    /* Status */
     #status {
       display: none;
       text-align: center;
@@ -235,10 +243,22 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .status-loading { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); color: var(--blue); }
-    .status-success { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); color: #2E7D32; }
-    .status-error { background: linear-gradient(135deg, #FFEBEE, #FFCDD2); color: var(--red); }
+    .status-loading {
+      background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+      color: var(--blue);
+    }
 
+    .status-success {
+      background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+      color: #2E7D32;
+    }
+
+    .status-error {
+      background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+      color: var(--red);
+    }
+
+    /* Spinner */
     .spinner {
       display: inline-block;
       width: 20px;
@@ -251,9 +271,15 @@
       margin-left: 8px;
     }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
-    #results { display: none; animation: fadeIn 0.5s ease; }
+    /* Results */
+    #results {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
 
     .result-banner {
       border-radius: 20px;
@@ -265,10 +291,20 @@
       box-shadow: var(--shadow);
     }
 
-    .result-valid { background: linear-gradient(135deg, #E8F5E9, #A5D6A7); border-right: 6px solid #2E7D32; }
-    .result-invalid { background: linear-gradient(135deg, #FFEBEE, #FFCDD2); border-right: 6px solid var(--red); }
+    .result-valid {
+      background: linear-gradient(135deg, #E8F5E9, #A5D6A7);
+      border-right: 6px solid #2E7D32;
+    }
 
-    .result-emoji { font-size: 3rem; animation: tada 1s ease; }
+    .result-invalid {
+      background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+      border-right: 6px solid var(--red);
+    }
+
+    .result-emoji {
+      font-size: 3rem;
+      animation: tada 1s ease;
+    }
 
     @keyframes tada {
       0% { transform: scale(1); }
@@ -280,11 +316,22 @@
       100% { transform: scale(1); }
     }
 
-    .result-text h2 { font-family: 'Fredoka One', cursive; font-size: 1.6rem; margin-bottom: 0.3rem; }
+    .result-text h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+    }
+
     .result-valid .result-text h2 { color: #1B5E20; }
     .result-invalid .result-text h2 { color: #B71C1C; }
-    .result-text p { font-size: 1.1rem; opacity: 0.85; font-weight: 700; }
 
+    .result-text p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      font-weight: 700;
+    }
+
+    /* Tiles grid */
     .tiles-section {
       background: var(--card);
       border-radius: 20px;
@@ -293,9 +340,21 @@
       margin-bottom: 1.5rem;
     }
 
-    .tiles-title { font-family: 'Fredoka One', cursive; font-size: 1.2rem; margin-bottom: 1rem; color: var(--text); display: flex; align-items: center; gap: 0.5rem; }
+    .tiles-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-    .tiles-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .tiles-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
 
     .tile-chip {
       display: inline-flex;
@@ -320,10 +379,24 @@
     .tile-yellow { background: linear-gradient(135deg, #FFB703, #F57F17); }
     .tile-black { background: linear-gradient(135deg, #37474F, #1a1a2e); }
 
-    #outputCanvas { width: 100%; border-radius: 16px; }
+    /* Canvas for detection */
+    #outputCanvas {
+      width: 100%;
+      border-radius: 16px;
+    }
 
-    footer { position: relative; z-index: 10; text-align: center; padding: 1rem; color: #bbb; font-size: 0.8rem; font-weight: 600; }
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 1rem;
+      color: #bbb;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
 
+    /* Model status indicator */
     .model-status {
       display: inline-flex;
       align-items: center;
@@ -337,7 +410,13 @@
       margin-bottom: 1.5rem;
     }
 
-    .status-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+    }
+
     .status-dot.loading { background: var(--yellow); animation: pulse 1s infinite; }
     .status-dot.ready { background: #4CAF50; }
     .status-dot.error { background: var(--red); }
@@ -350,8 +429,10 @@
 </head>
 <body>
 
+<!-- Animated background -->
 <div class="bg-tiles" id="bgTiles"></div>
 
+<!-- Header -->
 <header>
   <div class="logo">Rummikub Tile Detection 🎲</div>
   <div class="subtitle">זיהוי אריחי רמיקוב וסטים חוקיים</div>
@@ -364,6 +445,8 @@
 </header>
 
 <main>
+
+  <!-- Model status -->
   <div style="text-align:center">
     <div class="model-status" id="modelStatus">
       <div class="status-dot loading" id="statusDot"></div>
@@ -371,6 +454,7 @@
     </div>
   </div>
 
+  <!-- Upload area -->
   <div class="upload-card" id="uploadArea">
     <div class="upload-icon">📸</div>
     <div class="upload-text">העלה תמונה של אריחי רמיקוב 🎲</div>
@@ -378,19 +462,27 @@
     <input type="file" id="fileInput" accept="image/*">
   </div>
 
+  <!-- Buttons -->
   <div class="btn-row">
-    <button class="btn btn-primary" id="detectBtn" disabled>זהה 🔍</button>
-    <button class="btn btn-secondary" id="resetBtn" style="display:none">תמונה חדשה 🔄</button>
+    <button class="btn btn-primary" id="detectBtn" disabled>
+      זהה 🔍
+    </button>
+    <button class="btn btn-secondary" id="resetBtn" style="display:none">
+      תמונה חדשה 🔄
+    </button>
   </div>
 
+  <!-- Status message -->
   <div id="status"></div>
 
+  <!-- Preview -->
   <div id="preview-section">
     <div class="preview-card">
       <canvas id="outputCanvas"></canvas>
     </div>
   </div>
 
+  <!-- Results -->
   <div id="results">
     <div class="result-banner" id="resultBanner">
       <div class="result-emoji" id="resultEmoji"></div>
@@ -399,11 +491,13 @@
         <p id="resultDesc"></p>
       </div>
     </div>
+
     <div class="tiles-section" id="tilesSection" style="display:none">
       <div class="tiles-title">אריחים שזוהו 🎯</div>
       <div class="tiles-grid" id="tilesGrid"></div>
     </div>
   </div>
+
 </main>
 
 <footer>
@@ -412,6 +506,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
 <script>
+  // ===== Background animated tiles =====
   const colors = ['#FF6B6B','#4ECDC4','#FFE66D','#FF9F43','#A29BFE'];
   const bgContainer = document.getElementById('bgTiles');
   for (let i = 0; i < 20; i++) {
@@ -428,6 +523,7 @@
     bgContainer.appendChild(tile);
   }
 
+  // ===== Class names (52 classes) =====
   const CLASS_NAMES = [
     'black_1','black_10','black_11','black_12','black_13',
     'black_2','black_3','black_4','black_5','black_6',
@@ -450,6 +546,7 @@
     black: '#37474F'
   };
 
+  // ===== Rummikub Logic =====
   function isRun(tiles) {
     if (tiles.length < 3) return false;
     const colors = tiles.map(t => t.color);
@@ -489,12 +586,13 @@
     return { valid: false };
   }
 
+  // ===== Model Loading =====
   let model = null;
 
   async function loadModel() {
     try {
       setModelStatus('loading', 'טוען מודל...');
-      model = await tf.loadGraphModel('model.json');
+      model = await tf.loadGraphModel('rummikub_best_web_model/model.json');
       setModelStatus('ready', 'המודל מוכן ✓');
       document.getElementById('detectBtn').disabled = false;
     } catch (e) {
@@ -508,6 +606,7 @@
     document.getElementById('statusText').textContent = text;
   }
 
+  // ===== UI Events =====
   const uploadArea = document.getElementById('uploadArea');
   const fileInput = document.getElementById('fileInput');
   const detectBtn = document.getElementById('detectBtn');
@@ -516,8 +615,16 @@
   let currentImage = null;
 
   uploadArea.addEventListener('click', () => fileInput.click());
-  uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
-  uploadArea.addEventListener('dragleave', () => { uploadArea.classList.remove('drag-over'); });
+
+  uploadArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadArea.classList.add('drag-over');
+  });
+
+  uploadArea.addEventListener('dragleave', () => {
+    uploadArea.classList.remove('drag-over');
+  });
+
   uploadArea.addEventListener('drop', (e) => {
     e.preventDefault();
     uploadArea.classList.remove('drag-over');
@@ -565,10 +672,13 @@
 
   detectBtn.addEventListener('click', runDetection);
 
+  // ===== Detection =====
   async function runDetection() {
     if (!model || !currentImage) return;
+
     showStatus('loading', 'מזהה אריחים... <span class="spinner"></span> 🔍');
     detectBtn.disabled = true;
+
     await new Promise(r => setTimeout(r, 50));
 
     try {
@@ -579,28 +689,38 @@
       const ctx = canvas.getContext('2d');
       ctx.drawImage(currentImage, 0, 0, INPUT_SIZE, INPUT_SIZE);
 
+      // Prepare tensor
       const tensor = tf.tidy(() => {
-        return tf.browser.fromPixels(canvas).toFloat().div(255.0).expandDims(0);
+        return tf.browser.fromPixels(canvas)
+          .toFloat()
+          .div(255.0)
+          .expandDims(0);
       });
 
+      // Run model
       const output = await model.executeAsync(tensor);
       tensor.dispose();
 
+      // Parse output: shape [1, 56, 5376]
       const data = await output.data();
       output.dispose();
 
       const detections = parseDetections(data, INPUT_SIZE, 0.35);
       const nmsDetections = nms(detections, 0.45);
 
+      // Draw results
       drawDetections(nmsDetections);
 
+      // Extract tiles
       const tiles = nmsDetections.map(d => {
         const parts = CLASS_NAMES[d.classId].split('_');
         return { color: parts[0], number: parseInt(parts[1]) };
       });
 
+      // Find valid set
       const result = findValidSet(tiles);
       showResults(result, tiles);
+
       showStatus('success', `✅ זוהו ${tiles.length} אריחים`);
 
     } catch (e) {
@@ -612,39 +732,60 @@
   }
 
   function parseDetections(data, inputSize, confThresh) {
+    // Output shape: [1, 56, 5376] -> [56, 5376]
+    // 56 = 4 (bbox) + 52 (classes)
     const numPredictions = 5376;
+    const numFeatures = 56;
     const detections = [];
 
     for (let i = 0; i < numPredictions; i++) {
+      // Find max class score
       let maxScore = 0;
       let maxClass = 0;
       for (let c = 0; c < 52; c++) {
         const score = data[(4 + c) * numPredictions + i];
-        if (score > maxScore) { maxScore = score; maxClass = c; }
+        if (score > maxScore) {
+          maxScore = score;
+          maxClass = c;
+        }
       }
 
       if (maxScore < confThresh) continue;
 
+      // bbox in cx, cy, w, h normalized
       const cx = data[0 * numPredictions + i];
       const cy = data[1 * numPredictions + i];
       const w  = data[2 * numPredictions + i];
       const h  = data[3 * numPredictions + i];
 
-      detections.push({ cx, cy, w, h, x1: cx-w/2, y1: cy-h/2, x2: cx+w/2, y2: cy+h/2, score: maxScore, classId: maxClass });
+      detections.push({
+        cx, cy, w, h,
+        x1: cx - w/2,
+        y1: cy - h/2,
+        x2: cx + w/2,
+        y2: cy + h/2,
+        score: maxScore,
+        classId: maxClass
+      });
     }
     return detections;
   }
 
   function iou(a, b) {
-    const x1 = Math.max(a.x1, b.x1), y1 = Math.max(a.y1, b.y1);
-    const x2 = Math.min(a.x2, b.x2), y2 = Math.min(a.y2, b.y2);
+    const x1 = Math.max(a.x1, b.x1);
+    const y1 = Math.max(a.y1, b.y1);
+    const x2 = Math.min(a.x2, b.x2);
+    const y2 = Math.min(a.y2, b.y2);
     const inter = Math.max(0, x2-x1) * Math.max(0, y2-y1);
-    return inter / (a.w*a.h + b.w*b.h - inter);
+    const areaA = a.w * a.h;
+    const areaB = b.w * b.h;
+    return inter / (areaA + areaB - inter);
   }
 
   function nms(dets, iouThresh) {
     dets.sort((a,b) => b.score - a.score);
-    const keep = [], suppressed = new Set();
+    const keep = [];
+    const suppressed = new Set();
     for (let i = 0; i < dets.length; i++) {
       if (suppressed.has(i)) continue;
       keep.push(dets[i]);
@@ -658,21 +799,33 @@
   function drawDetections(detections) {
     const canvas = document.getElementById('outputCanvas');
     const ctx = canvas.getContext('2d');
-    const W = canvas.width, H = canvas.height;
+    const W = canvas.width;
+    const H = canvas.height;
+
     ctx.drawImage(currentImage, 0, 0, W, H);
-    const scaleX = W / 512, scaleY = H / 512;
+
+    const scaleX = W / 512;
+    const scaleY = H / 512;
 
     for (const det of detections) {
       const className = CLASS_NAMES[det.classId];
-      const color = COLOR_MAP[className.split('_')[0]] || '#888';
-      const x1 = det.x1 * 512 * scaleX, y1 = det.y1 * 512 * scaleY;
-      const bw = det.w * 512 * scaleX, bh = det.h * 512 * scaleY;
+      const color_name = className.split('_')[0];
+      const color = COLOR_MAP[color_name] || '#888';
 
-      ctx.strokeStyle = color; ctx.lineWidth = 3;
-      ctx.shadowColor = color; ctx.shadowBlur = 6;
+      const x1 = det.x1 * 512 * scaleX;
+      const y1 = det.y1 * 512 * scaleY;
+      const bw = det.w * 512 * scaleX;
+      const bh = det.h * 512 * scaleY;
+
+      // Draw box
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 3;
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 6;
       ctx.strokeRect(x1, y1, bw, bh);
       ctx.shadowBlur = 0;
 
+      // Draw label
       const label = `${className} ${(det.score*100).toFixed(0)}%`;
       ctx.font = 'bold 14px Nunito, sans-serif';
       const tw = ctx.measureText(label).width;
@@ -686,24 +839,30 @@
   function showResults(result, tiles) {
     const resultsEl = document.getElementById('results');
     const banner = document.getElementById('resultBanner');
+    const emoji = document.getElementById('resultEmoji');
+    const title = document.getElementById('resultTitle');
+    const desc = document.getElementById('resultDesc');
+    const tilesSection = document.getElementById('tilesSection');
+    const tilesGrid = document.getElementById('tilesGrid');
+
     resultsEl.style.display = 'block';
 
     if (result.valid) {
       banner.className = 'result-banner result-valid';
-      document.getElementById('resultEmoji').textContent = '🎉';
-      document.getElementById('resultTitle').textContent = 'נמצא סט חוקי!';
-      document.getElementById('resultDesc').innerHTML = `סוג: ${result.type}`;
+      emoji.textContent = '🎉';
+      title.textContent = `נמצא סט חוקי!`;
+      desc.innerHTML = `סוג: ${result.type}`;
     } else {
       banner.className = 'result-banner result-invalid';
-      document.getElementById('resultEmoji').textContent = '😕';
-      document.getElementById('resultTitle').textContent = 'לא נמצא סט חוקי';
-      document.getElementById('resultDesc').textContent = `זוהו ${tiles.length} אריחים - אין רצף או קבוצה חוקית`;
+      emoji.textContent = '😕';
+      title.textContent = 'לא נמצא סט חוקי';
+      desc.textContent = `זוהו ${tiles.length} אריחים - אין רצף או קבוצה חוקית`;
     }
 
-    const tilesGrid = document.getElementById('tilesGrid');
+    // Show tile chips
     tilesGrid.innerHTML = '';
     if (tiles.length > 0) {
-      document.getElementById('tilesSection').style.display = 'block';
+      tilesSection.style.display = 'block';
       tiles.forEach((tile, i) => {
         const chip = document.createElement('div');
         chip.className = `tile-chip tile-${tile.color}`;
@@ -721,6 +880,7 @@
     el.innerHTML = html;
   }
 
+  // Load model on page load
   loadModel();
 </script>
 </body>
